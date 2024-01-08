@@ -290,13 +290,13 @@ report_import_scheduler:
 
 resource_discovery:
   name: resource-discovery
-  replicaCount: 2 # amount of workers
+  replicaCount: 5 # amount of workers
   image:
     repository: resource_discovery
     tag: *tag
     pullPolicy: Never
   startingDeadlineSeconds: 100
-  schedule: "*/5 * * * *"
+  schedule: "*/2 * * * *"
   memory_limit: 1024
 
 demo_org_cleanup:
@@ -310,7 +310,7 @@ demo_org_cleanup:
 
 resource_observer:
   name: resource-observer
-  replicaCount: 1 # amount of workers
+  replicaCount: 2 # amount of workers
   image:
     repository: resource_observer
     tag: *tag
@@ -320,13 +320,13 @@ resource_observer:
 
 resource_violations:
   name: resource-violations
-  replicaCount: 1 # amount of workers
+  replicaCount: 3 # amount of workers
   image:
     repository: resource_violations
     tag: *tag
     pullPolicy: Never
   startingDeadlineSeconds: 100
-  schedule: "*/5 * * * *"
+  schedule: "*/30 * * * *"
 
 calendar_observer:
   name: calendar-observer
@@ -632,7 +632,7 @@ organization_violations:
     tag: *tag
     pullPolicy: Never
   startingDeadlineSeconds: 100
-  schedule: "*/5 * * * *"
+  schedule: "*/30 * * * *"
 
 cleanmongodb:
   name: cleanmongodb
@@ -711,7 +711,7 @@ bi_scheduler:
     tag: *tag
     pullPolicy: Never
   startingDeadlineSeconds: 100
-  schedule: "*/5 * * * *"
+  schedule: "*/30 * * * *"
 
 bi_exporter:
   name: bi-exporter
